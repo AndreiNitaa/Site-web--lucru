@@ -1,5 +1,5 @@
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -100,12 +100,13 @@ video {
   width: 100%;
 }
 
-.animation {
+.centrat {
   margin: 300px 500px 800px 800px;
-  animation-name: anima;
+
+  /* animation-name: anima;
   animation-duration: 1s;
-  animation-iteration-count: infinite;
-  transform: skew(20deg, 20deg);
+  animation-iteration-count: infinite; */
+  /* transform: skew(20deg, 20deg); */
 }
 
 @keyframes anima {
@@ -173,7 +174,7 @@ video {
     width: 50%;
     height: 50%;
     justify-content: center;
-    overflow: hidden;
+   
   }
 }
 
@@ -209,4 +210,114 @@ p::first-line {
 
 a[href^="/"] {
   color: var(--verde);
+}
+
+.main,
+.tail {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main {
+  width: 65%;
+  height: 100%;
+  box-shadow:
+    inset -2px 0 0 rgba(0, 0, 0, 0.18),
+    inset -4px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.tails {
+  display: flex;
+  width: 35%;
+  height: 100%;
+  border-left: 1px solid #e3e3e3;
+}
+
+.tail {
+  flex: 1;
+  height: 100%;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.main::before,
+.tail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 9px
+    );
+  mix-blend-mode: overlay;
+}
+
+.main::after,
+.tail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 30%,
+      transparent 32%
+    ),
+    linear-gradient(
+      80deg,
+      transparent 0%,
+      transparent 68%,
+      rgba(0, 0, 0, 0.12) 70%,
+      transparent 72%
+    );
+}
+.card {
+  display: flex;
+   height: 50px;
+  width: 400px; 
+
+/* flex-direction: column;
+height: 400px;
+width: 50px; */ 
+
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+}
+
+.tail div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tail img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }
