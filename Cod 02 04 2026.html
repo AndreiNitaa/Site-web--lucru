@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Cod 02 04 2026.css" />
+    <title>Formular Comanda</title>
+  </head>
+  <body>
+    <div class="parinte">
+      <p class="none"><b>Plasează comanda</b></p>
+
+      <form action="https://httpbin.org/post" method="post">
+        <fieldset>
+          <legend>1. Modalitate livrare</legend>
+
+          <div class="labels">
+            <label>
+              <input type="radio" name="livrare" value="ridicare" required />
+              Ridicare personală
+            </label>
+
+            <label>
+              <input type="radio" name="livrare" value="livrare" required />
+              Livrare acasă
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Date facturare</legend>
+          <div class="labels">
+            <label>
+              Nume:
+              <input
+                type="text"
+                name="nume"
+                placeholder="ex: Ion Popescu"
+                pattern="[a-zA-Z]+"
+                required
+              />
+            </label>
+
+            <label>
+              Telefon:
+              <input
+                type="tel"
+                name="telefon"
+                placeholder="ex: 07xxxxxxxx"
+                required
+                pattern="[0-9]+"
+              />
+            </label>
+          </div>
+
+          <div class="labels">
+            <label>
+              Județ:
+              <select name="judet" required>
+                <option value="">Selectează județul</option>
+                <option value="Judet 1">Judet 1</option>
+                <option value="Judet 2">Judet 2</option>
+                <option value="Judet 3">Judet 3</option>
+                <option value="Judet 4">Judet 4</option>
+              </select>
+            </label>
+
+            <label>
+              Localitate:
+              <input
+                type="text"
+                name="localitate"
+                required
+                pattern="[a-zA-Z]+"
+              />
+            </label>
+
+            <label>
+              Adresă:
+              <input type="text" name="adresa" required pattern="[a-zA-Z]+" />
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>3. Modalitate de plată</legend>
+          <div class="labels">
+            <label>
+              <input type="radio" name="plata" value="card" required />
+              Card
+            </label>
+
+            <label>
+              <input type="radio" name="plata" value="numerar" required />
+              Numerar la livrare
+            </label>
+
+            <label>
+              <input type="radio" name="plata" value="rate" required />
+              Plată în rate
+            </label>
+          </div>
+
+          <button type="submit">Trimite comanda</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
