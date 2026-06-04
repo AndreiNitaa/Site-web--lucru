@@ -6,20 +6,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  min-height: 100vh;
   background-color:  hsl(212, 45%, 89%)
 }
 
 img {
-  max-width: 20%;
-  max-height: 20%;
-  align-self: center;
-   border-radius: 10px;
+    width: 320px;
+  max-width: 90%;
+  border-radius: 10px;
+  
 }
 
 .outer{
+  display: flex;
     flex-direction: column;
-  max-width: 35%;
+  width: 320px;
   max-height: 40%;
   font-family: QRCODEfont;
   background-color: white;
@@ -27,6 +28,8 @@ img {
   border-radius: 10px;
   margin-bottom: 50px;
   text-align: center;
+   gap: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 p{
